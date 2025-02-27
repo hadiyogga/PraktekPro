@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from '../../components/Layout';
-import { Student, InternshipApplication } from '../../types';
-import { CircleCheck, File, Send, CircleX } from 'lucide-react';
+import { Student, InternshipApplication, ApplicationStatus } from '../../types';
+import { CircleCheck, CircleX, Send } from 'lucide-react';
 
 const TeacherStudents: React.FC = () => {
   const [students, setStudents] = useState<Student[]>([]);
@@ -39,7 +39,7 @@ const TeacherStudents: React.FC = () => {
     // Update application status
     const updatedApplication = {
       ...application,
-      status: 'approved'
+      status: 'approved' as ApplicationStatus
     };
     
     // Update student status
@@ -83,7 +83,7 @@ const TeacherStudents: React.FC = () => {
     // Update application status
     const updatedApplication = {
       ...application,
-      status: 'rejected'
+      status: 'rejected' as ApplicationStatus
     };
     
     // Update student status

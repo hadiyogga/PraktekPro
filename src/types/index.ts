@@ -1,5 +1,6 @@
 // User types
 export type UserRole = 'admin' | 'teacher' | 'student';
+export type ApplicationStatus = 'pending' | 'approved' | 'rejected';
 
 export interface User {
   id: string;
@@ -87,7 +88,7 @@ export interface InternshipApplication {
   position: string;
   startDate: string;
   endDate: string;
-  status: 'pending' | 'approved' | 'rejected';
+  status: ApplicationStatus;
   notes?: string;
   submittedDate: string;
 }

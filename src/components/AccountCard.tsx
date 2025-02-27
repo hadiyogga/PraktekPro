@@ -9,8 +9,6 @@ interface AccountCardProps {
 
 export const printAccountCards = (users: User[], type: 'student' | 'teacher') => {
   const doc = new jsPDF();
-  const pageWidth = doc.internal.pageSize.getWidth();
-  const pageHeight = doc.internal.pageSize.getHeight();
   
   // Card dimensions
   const cardWidth = 90;

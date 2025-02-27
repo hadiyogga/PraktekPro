@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Layout from '../../components/Layout';
-import { Student, InternshipApplication } from '../../types';
+import { Student, InternshipApplication, ApplicationStatus } from '../../types';
 import { CircleCheck, CircleX, Download, FileText, Search, Trash } from 'lucide-react';
 import * as XLSX from 'xlsx';
 
@@ -83,7 +83,7 @@ const AdminApplications: React.FC = () => {
     // Update application status
     const updatedApplication = {
       ...application,
-      status: 'approved'
+      status: 'approved' as ApplicationStatus
     };
     
     // Update student status
@@ -135,7 +135,7 @@ const AdminApplications: React.FC = () => {
     // Update application status
     const updatedApplication = {
       ...application,
-      status: 'rejected'
+      status: 'rejected' as ApplicationStatus
     };
     
     // Update student status
@@ -204,7 +204,6 @@ const AdminApplications: React.FC = () => {
 
   const exportApplicationsToExcel = () => {
     const data = applications.map(app => {
-      const student = students.find(s => s.id === app.studentId);
       return {
         'Nama Siswa': getStudentName(app.studentId),
         'Kelas': getStudentClass(app.studentId),

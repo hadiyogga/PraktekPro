@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserByUsername } from '../utils/dataUtils';
-import { User } from '../types';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
